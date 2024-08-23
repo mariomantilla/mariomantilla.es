@@ -1,7 +1,7 @@
 import { Github, Linkedin, Mail, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { AnimatedH1 } from "@/components/animated/h1"
+import { AnimatedLogo } from "@/components/animated/logo"
 import { AnimatedLi } from "@/components/animated/li"
 import { AnimatedDiv } from "@/components/animated/div"
 import { AnimatedH2 } from "@/components/animated/h2"
@@ -11,22 +11,19 @@ import { ContactButton } from "@/components/contact-button"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import Image from "next/image"
 import marioPic from "@/public/mario.jpg"
-import { Rubik } from "next/font/google";
-
-const rubik = Rubik({ subsets: ["latin"] });
 
 
 export default function Home() {
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-purple-700 via-indigo-800 to-blue-900 text-white">
+		<div className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-200 to-orange-100 text-stone-900">
 			<header className="sticky top-0 z-10 backdrop-blur-sm bg-white/10 border-b border-white/20 max-w-screen-2xl">
 				<div className="container mx-auto px-4 py-4 flex justify-center sm:justify-between items-center">
-					<AnimatedH1>
-						Mario Mantilla
-					</AnimatedH1>
+					<AnimatedLogo>
+						&lt;M/M&gt;
+					</AnimatedLogo>
 					<nav>
-						<ul className="flex space-x-6 text-xs sm:text-sm">
+						<ul className="flex space-x-8 text-xs sm:text-base">
 							{["About", "Skills", "Projects", "Contact"].map((text, index) => (
 								<AnimatedLi key={text} text={text} index={index} />
 							))}
@@ -36,6 +33,11 @@ export default function Home() {
 			</header>
 
 			<main className="container mx-auto px-4 py-12 max-w-screen-lg">
+				<section className="mb-24">
+					<h1 className="text-5xl sm:text-7xl mb-5">Mario Mantilla</h1>
+					<h2 className="text-2xl text-balance">A <span className="bg-cyan-950 text-white px-2">software engineer</span> with focus
+					on <span className="bg-rose-800 text-white px-2">social impact</span></h2>
+				</section>
 				<section id="about" className="mb-24 flex flex-row gap-10 max-sm:flex-col-reverse">
 					<AnimatedDiv
 						initial={{ opacity: 0, y: 50 }}
@@ -43,8 +45,8 @@ export default function Home() {
 						transition={{ duration: 0.8 }}
 						className="grow"
 					>
-						<h2 className="text-5xl font-bold mb-6">About Me</h2>
-						<p className="text-xl mb-6 max-w-2xl">
+						<h2 className="text-5xl mb-6">About Me</h2>
+						<p className="text-xl mb-6 text-balance">
 							Hi, I&apos;m Jane Doe, a passionate software engineer with 5 years of experience in full-stack development.
 							I specialize in building scalable web applications using modern technologies.
 						</p>
@@ -87,7 +89,7 @@ export default function Home() {
 							>
 								<Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-colors duration-300">
 									<CardContent className="p-6">
-										<p className="text-center text-lg font-semibold text-white">{skill}</p>
+										<p className="text-center text-lg font-semibold text-stone-900">{skill}</p>
 									</CardContent>
 								</Card>
 							</AnimatedDiv>
@@ -128,11 +130,11 @@ export default function Home() {
 							>
 								<Card className="bg-white/10 border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
 									<CardHeader>
-										<CardTitle className="text-2xl font-semibold text-white">{project.title}</CardTitle>
-										<CardDescription className="text-white/70">{project.description}</CardDescription>
+										<CardTitle className="text-2xl font-semibold text-stone-900">{project.title}</CardTitle>
+										<CardDescription className="text-stone-900/70">{project.description}</CardDescription>
 									</CardHeader>
 									<CardContent>
-										<Button variant="link" className="p-0 text-yellow-300 hover:text-yellow-100">View Project</Button>
+										<Button variant="outline" className="">View Project</Button>
 									</CardContent>
 								</Card>
 							</AnimatedDiv>
@@ -151,16 +153,16 @@ export default function Home() {
 						<CardContent className="p-8">
 							<form className="space-y-6 items-center">
 								<div>
-									<label htmlFor="name" className="block text-lg font-medium mb-2 text-white">Name</label>
-									<input type="text" id="name" className="w-full p-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
+									<label htmlFor="name" className="block text-lg font-medium mb-2">Name</label>
+									<input type="text" id="name" className="w-full p-3 bg-white/5 border border-white/20 rounded-md placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-rose-900" />
 								</div>
 								<div>
-									<label htmlFor="email" className="block text-lg font-medium mb-2 text-white">Email</label>
-									<input type="email" id="email" className="w-full p-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300" />
+									<label htmlFor="email" className="block text-lg font-medium mb-2">Email</label>
+									<input type="email" id="email" className="w-full p-3 bg-white/5 border border-white/20 rounded-md placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-rose-900" />
 								</div>
 								<div>
-									<label htmlFor="message" className="block text-lg font-medium mb-2 text-white">Message</label>
-									<textarea id="message" rows={4} className="w-full p-3 bg-white/5 border border-white/20 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-yellow-300"></textarea>
+									<label htmlFor="message" className="block text-lg font-medium mb-2">Message</label>
+									<textarea id="message" rows={4} className="w-full p-3 bg-white/5 border border-white/20 rounded-md placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-rose-900"></textarea>
 								</div>
 								<div className="flex items-center justify-center">
 									<Button variant="outline" type="submit">
@@ -177,7 +179,7 @@ export default function Home() {
 
 			<footer className="bg-black/30 py-8">
 				<div className="container mx-auto px-4 text-center">
-					<p className="mb-4">&copy; 2024 Mario Mantilla. All rights reserved.</p>
+					<p className="mb-4 text-white">&copy; 2024 Mario Mantilla. All rights reserved.</p>
 					<div className="flex justify-center space-x-6">
 						<ContactButton
 							url="https://github.com/mariomantilla"
