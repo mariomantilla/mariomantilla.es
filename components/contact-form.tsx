@@ -15,10 +15,10 @@ export const ContactForm = () => {
             }),
         }).then((res) => res.json().then((response) => {
             toast({
-                variant: res.status !== 500 ? 'default' : 'destructive',
+                variant: res.status !== 200 ? 'destructive' : 'default',
                 description: response.message,
             })
-            if (res.status !== 500) {
+            if (res.status === 200) {
                 setName('')
                 setEmail('')
                 setMessage('')

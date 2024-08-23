@@ -6,6 +6,28 @@ export async function POST(request: NextRequest) {
 
   const { email, name, message } = await request.json();
 
+  const validateEmail = (email: string) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
+  if ([email, name, message].some((x) => !x)) {
+    return NextResponse.json(
+      { message: "Todos los campos son obligatorios" },
+      { status: 400 }
+    );
+  }
+
+  if (!validateEmail(email)) {
+    return NextResponse.json(
+      { message: "El email no es correcto" },
+      { status: 400 }
+    );
+  }
+
   const transport = nodemailer.createTransport({
     service: "gmail",
     /* 
