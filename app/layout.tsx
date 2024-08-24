@@ -7,6 +7,7 @@ import "./globals.css";
 const open_sans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.mariomantilla.es'),
   title: "Mario Mantilla - Software Engineer and Social Impact",
   description: "The personal website of Mario Mantilla, software engineering and social impact",
 };
