@@ -144,12 +144,12 @@ export default function Home() {
 			</header>
 
 			<main className="container mx-auto px-4 py-12 max-w-screen-lg">
-				<section className="mb-6 sm:mb-24">
+				<section className="mb-6 sm:mb-12 md::mb-24">
 					<h1 className="text-5xl sm:text-7xl mb-5 text-center sm:text-left">Mario Mantilla</h1>
 					<h2 className="text-2xl text-balance text-center sm:text-left leading-10">A <span className="bg-cyan-950 text-white px-2">software engineer</span> with focus
 						on <span className="bg-rose-800 text-white px-2">social impact</span></h2>
 				</section>
-				<section id="about" className="mb-12 sm:mb-24 flex flex-row gap-6 sm:gap-10 max-sm:flex-col-reverse">
+				<section id="about" className="mb-12 sm:mb-24 flex flex-row gap-6 max-md:flex-col-reverse">
 					<div className="grow">
 						<h2 className="text-4xl sm:text-5xl mb-6">About Me</h2>
 						<p className="text-lg sm:text-xl mb-6 text-left sm:text-balance">
@@ -184,9 +184,10 @@ export default function Home() {
 						initial={{ opacity: 0, y: 50 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
+						className="sm:mr-6 my-auto"
 					>
 						<Image priority src={marioPic} alt="Picture of Mario" width={250} height={250}
-						className="mx-auto sm:mx-0 rounded-full max-w-44 sm:max-w-none"
+						className="mx-auto md:mx-0 rounded-full max-w-44 sm:max-w-none"
 						sizes="(max-width: 640px) 176px, 250px" />
 					</AnimatedDiv>
 
