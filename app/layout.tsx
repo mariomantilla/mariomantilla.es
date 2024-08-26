@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.mariomantilla.es'),
   title: "Mario Mantilla - Software Engineer and Social Impact",
   description: "The personal website of Mario Mantilla, software engineering and social impact",
+  alternates: {
+    canonical: './',
+  }
 };
 
 export default function RootLayout({

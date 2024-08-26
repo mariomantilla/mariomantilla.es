@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Send, SquareArrowOutUpRight, Chrome } from "lucide-react"
+import { Github, Linkedin, Mail, SquareArrowOutUpRight, Chrome } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { AnimatedLogo } from "@/components/animated/logo"
@@ -8,7 +8,6 @@ import { AnimatedH2 } from "@/components/animated/h2"
 import { GoTop } from "@/components/go-top"
 import { HeaderButton } from "@/components/header-button"
 import { ContactButton } from "@/components/contact-button"
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import Image from "next/image"
 import marioPic from "@/public/mario.jpg"
 import { ContactForm } from "@/components/contact-form"
@@ -135,7 +134,7 @@ export default function Home() {
 						&lt;M/M&gt;
 					</AnimatedLogo>
 					<nav>
-						<ul className="flex space-x-8 text-xs sm:text-base">
+						<ul className="flex space-x-8 text-sm sm:text-base">
 							{["About", "Skills", "Projects", "Contact"].map((text, index) => (
 								<AnimatedLi key={text} text={text} index={index} />
 							))}
@@ -145,20 +144,15 @@ export default function Home() {
 			</header>
 
 			<main className="container mx-auto px-4 py-12 max-w-screen-lg">
-				<section className="mb-24">
-					<h1 className="text-5xl sm:text-7xl mb-5">Mario Mantilla</h1>
-					<h2 className="text-2xl text-balance">A <span className="bg-cyan-950 text-white px-2">software engineer</span> with focus
+				<section className="mb-6 sm:mb-24">
+					<h1 className="text-5xl sm:text-7xl mb-5 text-center sm:text-left">Mario Mantilla</h1>
+					<h2 className="text-2xl text-balance text-center sm:text-left leading-10">A <span className="bg-cyan-950 text-white px-2">software engineer</span> with focus
 						on <span className="bg-rose-800 text-white px-2">social impact</span></h2>
 				</section>
-				<section id="about" className="mb-24 flex flex-row gap-10 max-sm:flex-col-reverse">
-					<AnimatedDiv
-						initial={{ opacity: 0, y: 50 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8 }}
-						className="grow"
-					>
-						<h2 className="text-5xl mb-6">About Me</h2>
-						<p className="text-xl mb-6 text-balance">
+				<section id="about" className="mb-12 sm:mb-24 flex flex-row gap-6 sm:gap-10 max-sm:flex-col-reverse">
+					<div className="grow">
+						<h2 className="text-4xl sm:text-5xl mb-6">About Me</h2>
+						<p className="text-lg sm:text-xl mb-6 text-left sm:text-balance">
 							A versatile engineer that loves transforming software into social impact.
 							Background in aerospace engineering and years of experience developing software.
 							Worked as freelance developer and building scalable SaaS applications.
@@ -167,34 +161,38 @@ export default function Home() {
 							teaching and learning from others. Savours diving into product design and business
 							logic to come up with the best technical solutions.
 						</p>
-						<div className="flex space-x-4">
-							<HeaderButton
-								url="https://github.com/mariomantilla"
-								text="GitHub"
-								icon={<Github className="mr-2 h-5 w-5" />}
-							/>
-							<HeaderButton
-								url="https://www.linkedin.com/in/mariomantilla/"
-								text="LinkedIn"
-								icon={<Linkedin className="mr-2 h-5 w-5" />}
-							/>
-						</div>
-					</AnimatedDiv>
+						<AnimatedDiv
+							initial={{ opacity: 0, y: 50 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.8 }}
+						>
+							<div className="flex space-x-4">
+								<HeaderButton
+									url="https://github.com/mariomantilla"
+									text="GitHub"
+									icon={<Github className="mr-2 h-5 w-5" />}
+								/>
+								<HeaderButton
+									url="https://www.linkedin.com/in/mariomantilla/"
+									text="LinkedIn"
+									icon={<Linkedin className="mr-2 h-5 w-5" />}
+								/>
+							</div>
+						</AnimatedDiv>
+					</div>
 					<AnimatedDiv
 						initial={{ opacity: 0, y: 50 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
 					>
-						<Avatar style={{ width: 250, height: 250 }} className="mx-auto sm:mx-0">
-							<AvatarImage asChild src="mario.jpg">
-								<Image priority src={marioPic} alt="Picture of Mario" width={250} height={250} />
-							</AvatarImage>
-						</Avatar>
+						<Image priority src={marioPic} alt="Picture of Mario" width={250} height={250}
+						className="mx-auto sm:mx-0 rounded-full max-w-44 sm:max-w-none"
+						sizes="(max-width: 640px) 176px, 250px" />
 					</AnimatedDiv>
 
 				</section>
 
-				<section id="skills" className="mb-24">
+				<section id="skills" className="mb-12 sm:mb-24">
 					<AnimatedH2>Main Technologies</AnimatedH2>
 					<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 						{skills.map((skill, index) => (
@@ -214,7 +212,7 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section id="projects" className="mb-24">
+				<section id="projects" className="mb-12 sm:mb-24">
 					<AnimatedH2>Projects</AnimatedH2>
 					<div className="grid md:grid-cols-2 gap-8 items-stretch">
 						{projects.map((project, index) => (

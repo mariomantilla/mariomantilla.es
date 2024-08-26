@@ -37,7 +37,7 @@ export const ContactForm = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
-    const inputClassName = "w-full p-3 bg-white/5 border border-white/20 rounded-md placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-rose-900"
+    const inputClassName = "w-full p-3 bg-white/5 border border-rose-900/20 rounded-md placeholder-black/50 focus:outline-none focus:ring-2 focus:ring-rose-900"
 
     return (
         <form className="space-y-6 items-center" action={sendEmail}>
