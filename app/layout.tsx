@@ -8,6 +8,10 @@ const open_sans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.mariomantilla.es'),
+  openGraph: {
+    siteName: "Mario Mantilla",
+    type: "website",
+  },
   title: "Mario Mantilla - Software Engineer and Social Impact",
   description: "The personal website of Mario Mantilla, software engineering and social impact",
   alternates: {
