@@ -153,13 +153,9 @@ export default function Home() {
 					<div className="grow">
 						<h2 className="text-4xl sm:text-5xl mb-6">About Me</h2>
 						<p className="text-lg sm:text-xl mb-6 text-left sm:text-balance">
-							A versatile engineer that loves transforming software into social impact.
-							Background in aerospace engineering and years of experience developing software.
-							Worked as freelance developer and building scalable SaaS applications.
+							Versatile engineering leader with a background in aerospace engineering and extensive experience developing software solutions across sectors. Proven expertise in leading teams, delivering complex projects, and solving challenging problems.
 							<br /><br />
-							Flexible character and team worker that can work independently but enjoys
-							teaching and learning from others. Savours diving into product design and business
-							logic to come up with the best technical solutions.
+							Passionate about driving social impact and sustainability through technology. Enjoys bridging product design and business logic to craft optimal technical solutions. Collaborative and adaptable, thriving in environments where teaching and learning go hand-in-hand.
 						</p>
 						<AnimatedDiv
 							initial={{ opacity: 0, y: 50 }}
